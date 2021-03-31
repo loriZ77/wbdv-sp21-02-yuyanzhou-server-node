@@ -7,5 +7,8 @@ const app = express()
 const demos = require('./controllers/demos-controllers')
 demos(app)
 
+const quizzesController = require('./controllers/quizzes-controller')
+quizzesController(app)
+
 //start a server listen to a port
 app.listen(3000)

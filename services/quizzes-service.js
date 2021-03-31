@@ -1,6 +1,5 @@
 const quizzes = require('./quizzes.json')
 
-//TODO: Node.js this week
 const findAllQuizzes = () => {
     return quizzes
 }
@@ -11,7 +10,7 @@ const findQuizById = (quizId) => {
     })
 }
 //console.log(findAllQuizzes())
-console.log(findQuizById('123'))
+//console.log(findQuizById('123'))
 
 
 //TODO: MongoDB next week
@@ -19,6 +18,7 @@ const createQuiz = () => {}
 const updateQuiz = () => {}
 const deleteQuiz = () => {}
 
+// export functions for controller
 module.exports= {
     createQuiz,
     findAllQuizzes,
