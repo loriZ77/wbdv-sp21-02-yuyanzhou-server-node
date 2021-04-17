@@ -3,6 +3,11 @@
 const express = require('express')
 const app = express()
 
+const mongoose = require('mongoose');
+mongoose.connect(
+    'mongodb://localhost:27017/whiteboard-02',
+    {useNewUrlParser: true, useUnifiedTopology: true});
+
 app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers',
