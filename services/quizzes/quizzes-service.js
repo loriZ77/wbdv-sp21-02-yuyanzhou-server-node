@@ -1,6 +1,7 @@
 const quizzes = require('./quizzes.json')
 
 const quizzesModel = require("../../models/quizzes/quizzes-model")
+const quizzesDao = require("../../daos/quizzzes-dao")
 
 const findAllQuizzes = () => {
     return quizzesModel.find()
@@ -26,16 +27,13 @@ const findQuizById = (quizId) => {
 //console.log(findQuizById('123'))
 
 
-//TODO: MongoDB next week
-const createQuiz = () => {}
-const updateQuiz = () => {}
-const deleteQuiz = () => {}
+// const createQuiz = () => {}
+// const updateQuiz = () => {}
+// const deleteQuiz = () => {}
 
 // export functions for controller
 module.exports= {
-    createQuiz,
     findAllQuizzes,
     findQuizById,
-    updateQuiz,
-    deleteQuiz
+
 }

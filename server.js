@@ -3,6 +3,7 @@
 const express = require('express')
 const app = express()
 
+
 const mongoose = require('mongoose');
 mongoose.connect(
     'mongodb://localhost:27017/whiteboard-02',
@@ -17,6 +18,9 @@ app.use(function (req, res, next) {
     next();
 });
 
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 // with a . : from file path
 const demos = require('./controllers/demos-controllers')
@@ -27,6 +31,8 @@ quizzesController(app)
 
 const questionsController = require('./controllers/questions-controller')
 questionsController(app)
+
+require('./controllers/quiz-attempts-controller')(app)
 
 //start a server listen to a port
 app.listen(3001)
