@@ -6,7 +6,7 @@ const app = express()
 
 const mongoose = require('mongoose');
 mongoose.connect(
-    'mongodb://localhost:27017/whiteboard-02',
+    'mongodb+srv://zhou77:assignment8@cluster0.cvd5e.mongodb.net/whiteboard?retryWrites=true&w=majority',
     {useNewUrlParser: true, useUnifiedTopology: true});
 
 app.use(function (req, res, next) {
@@ -35,4 +35,4 @@ questionsController(app)
 require('./controllers/quiz-attempts-controller')(app)
 
 //start a server listen to a port
-app.listen(3001)
+app.listen(process.env.MONGODB_URL)
