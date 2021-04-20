@@ -3,6 +3,8 @@
 const express = require('express')
 const app = express()
 
+const uri = process.env.MONGODB_URL;
+
 
 const mongoose = require('mongoose');
 mongoose.connect(
@@ -35,4 +37,4 @@ questionsController(app)
 require('./controllers/quiz-attempts-controller')(app)
 
 //start a server listen to a port
-app.listen(process.env.MONGODB_URL)
+app.listen(process.env.PORT)
